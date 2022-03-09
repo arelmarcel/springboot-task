@@ -68,7 +68,7 @@ public class ProductService {
             //fetch
             return fetchAll();
         } else {
-            return  fetchAllInPrice(maxPrice);
+            return  fetchAllUnderMaxPrice(maxPrice);
         }
 
     }
@@ -76,7 +76,8 @@ public class ProductService {
 //    public List<ProductEntity> fetchAllInStock() {
 //        return productRepository.findByPriceLessThanEqual();
 //    }
-    public List<ProductEntity> fetchAllInPrice(long price) {
+
+    public List<ProductEntity> fetchAllUnderMaxPrice(long price) {
         return productRepository.findByPriceLessThanEqual(price);
     }
 }
